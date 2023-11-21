@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:healty/screens/home_screen.dart';
 
 class Screen extends StatelessWidget {
   const Screen({Key? key}) : super(key: key);
@@ -8,6 +9,15 @@ class Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+
+    Future.delayed(Duration(seconds: 4)).then((value) {
+      Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const HomeScreen(),
+          ),
+          result: (route) => false);
+    });
 
     return Scaffold(
       body: Stack(
